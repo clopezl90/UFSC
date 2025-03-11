@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=hrSGCz9DZBE&t=80s
+
+https://aquaulb.github.io/book_solving_pde_mooc/solving_pde_mooc/notebooks/05_IterativeMethods/05_01_Iteration_and_2D.html#gauss-seidel-method
