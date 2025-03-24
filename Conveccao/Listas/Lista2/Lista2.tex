@@ -1,0 +1,172 @@
+\documentclass[]{article}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{float} 
+\usepackage{xcolor}
+\usepackage{amsmath, amssymb, bm}
+
+
+\usepackage{array}
+\usepackage{booktabs}
+
+
+
+% margenes
+\usepackage[a4paper,left=3cm,right=3cm,top=3cm]{geometry}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\begin{center}
+	{\tiny {\normalsize {\large Lista de exercicios 1\\
+Convecçao\\
+\textbf{Cristian Herledy Lopez Lara}}}}
+\end{center}
+
+\section*{Exercício 1}
+\subsubsection*{1.1}
+
+\textbf{Derivar, a partir de um volume infinitesimal, as equações da conservação da massa, momento e energia na forma diferencial.} \\
+
+
+\textbf{Conservação da massa:} 
+
+Considerando um volume de controle fixo dentro do campo de fluxo (com $\Delta x \Delta y  \Delta z \rightarrow 0 $), infinitesimalmente pequeno, a abordagem para conservação de massa será:
+
+\begin{equation}
+	\frac{\Delta m}{\Delta t} = \dot{m}_{entra} - \dot{m}_{sai}
+\end{equation}
+OBSERVAÇÃO: Para facilidade, os diagramas de equilíbrio são desenhados em duas dimensões.
+
+
+
+
+Sua forma diferencial seria dada por
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial}{\partial t} (\rho \Delta x \Delta y \Delta z) = \rho u\Delta y\Delta z + \rho v\Delta x\Delta z + \rho w\Delta y\Delta z - [\rho u +	\frac{\partial}{\partial x}(\rho u)\Delta x]\Delta y\Delta z - \\ [\rho v +	\frac{\partial}{\partial y}(\rho v)\Delta y]\Delta x\Delta z - [\rho w +	\frac{\partial}{\partial z}(\rho w)\Delta z]\Delta x\Delta y
+	\end{aligned}
+\end{equation}
+
+E dividindo pelo volume constante $\Delta x \Delta y  \Delta z$
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial}{\partial t} \rho + \frac{\partial}{\partial t} (\rho u) + \frac{\partial}{\partial t} (\rho v) + \frac{\partial}{\partial t} (\rho z) = 0 
+	\end{aligned}
+\end{equation}
+
+Usando a definição de derivada material e o operador divergencia
+\begin{equation}
+	\begin{aligned}
+		\frac{D}{D t} \rho +  \bigtriangledown (\rho V)= 0 
+	\end{aligned}
+\end{equation}
+
+
+\textbf{Conservação do momento:} 
+
+Derivando a análise da segunda lei de Newton e tomando a velocidade como uma propriedade de transporte, o abordagem para conservação do momento dentro do volume de controle (vc) será
+
+\begin{equation}
+	\frac{\Delta }{\Delta t} (mV)_{vc}= \sum F +\dot{m}V_{entra} - \dot{m}V_{sai}
+\end{equation}
+
+
+
+
+O equilíbrio de forças devido ao fluxo de momento e à tensão normal e tangencial na direção x será
+
+\begin{equation}
+	\begin{aligned}
+		-\frac{\partial}{\partial t} (\rho u \Delta x \Delta y \Delta z) + \rho uu \Delta y \Delta z - [\rho uu +	\frac{\partial}{\partial x}(\rho uu)\Delta x]\Delta y\Delta z - \\  \rho uv \Delta x \Delta z - [\rho uv +	\frac{\partial}{\partial y}(\rho uv)\Delta y]\Delta x\Delta z -   \rho uw \Delta x \Delta y - [\rho uw +	\frac{\partial}{\partial z}(\rho uw)\Delta z]\Delta x\Delta y \\ + \sigma_{x} \Delta x\Delta y - (\sigma_{x} + \frac{\partial}{\partial x}\sigma_{x} \Delta x) \Delta y\Delta z - \tau_{xy} \Delta x\Delta y - (\tau_{xy} + \frac{\partial}{\partial x}\tau_{xy} \Delta y) \Delta x\Delta z + gx \Delta x\Delta y\Delta z
+	\end{aligned}
+\end{equation}
+
+Sendo $gx$ o termo fonte. Dividindo pelo volume de controle quando $\Delta x \Delta y  \Delta z \rightarrow 0 $
+
+\begin{equation}
+	\begin{aligned}
+		\rho \frac{ Du}{Dt} + u[ \frac{D}{D t} \rho + \rho(\frac{\partial}{\partial x}u \frac{\partial}{\partial y}v)] = - \frac{\partial \sigma_{x}}{\partial x} +  \frac{\partial \tau_{xy}}{\partial y} + gx   
+	\end{aligned}
+\end{equation}
+
+Lembrando que o segundo termo é igual a zero segundo a conservação da massa
+
+\begin{equation}
+	\begin{aligned}
+		\rho \frac{ Du}{Dt} = - \frac{\partial \sigma_{x}}{\partial x} +  \frac{\partial \tau_{xy}}{\partial y} + gx   
+	\end{aligned}
+\end{equation}
+
+Com a definição do tensor de tensão dada por
+\begin{equation}
+	\tau_{ij} = -p \delta_{ij} + \mu \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right) + \delta_{ij} \lambda \nabla \cdot \mathbf{V}
+\end{equation}
+\begin{equation}
+	\lambda = -\frac{2}{3} \mu
+\end{equation}
+
+Que combinado com a equação 8 dá origem à equação de Navier-Stokes em x
+\begin{equation}
+	\begin{aligned}
+	\frac{\partial}{\partial t} (\rho u) + \frac{\partial}{\partial x} (\rho u u) + \frac{\partial}{\partial y} (\rho v u) + \frac{\partial}{\partial z} (\rho w u) = \\
+	- \frac{\partial p}{\partial x} + \frac{\partial}{\partial x} \left( 2 \mu \frac{\partial u}{\partial x} + \lambda \nabla \cdot \mathbf{V} \right) +
+	\frac{\partial}{\partial y} \left( \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right) \right) +
+	\frac{\partial}{\partial z} \left( \mu \left( \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x} \right) \right) + g_x
+	\end{aligned}
+\end{equation}
+
+E para $y$ e $z$
+
+\begin{equation}
+	\begin{aligned}
+	\frac{\partial}{\partial t} (\rho v) + \frac{\partial}{\partial x} (\rho u v) + \frac{\partial}{\partial y} (\rho v v) + \frac{\partial}{\partial z} (\rho w v) = \\
+	- \frac{\partial p}{\partial y} + \frac{\partial}{\partial x} \left( \mu \left( \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \right) \right) +
+	\frac{\partial}{\partial y} \left( 2 \mu \frac{\partial v}{\partial y} + \lambda \nabla \cdot \mathbf{V} \right) +
+	\frac{\partial}{\partial z} \left( \mu \left( \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \right) \right) +  g_y
+	\end{aligned}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+	\frac{\partial}{\partial t} (\rho w) + \frac{\partial}{\partial x} (\rho u w) + \frac{\partial}{\partial y} (\rho v w) + \frac{\partial}{\partial z} (\rho w w) = \\
+	- \frac{\partial p}{\partial z} + \frac{\partial}{\partial x} \left( \mu \left( \frac{\partial w}{\partial x} + \frac{\partial u}{\partial z} \right) \right) +
+	\frac{\partial}{\partial y} \left( \mu \left( \frac{\partial w}{\partial y} + \frac{\partial v}{\partial z} \right) \right) +
+	\frac{\partial}{\partial z} \left( 2 \mu \frac{\partial w}{\partial z} + \lambda \nabla \cdot \mathbf{V} \right) +  g_z
+	\end{aligned}
+\end{equation}
+
+\textbf{Conservação da energia:} 
+
+Da mesma forma, o diagrama a seguir mostra a análise da primeira lei da termodinâmica para volume infinitesimal
+
+
+
+
+
+\begin{equation}
+	\begin{aligned}
+		\rho \frac{ De}{Dt} + e(\frac{D}{D t} \rho +  \bigtriangledown (\rho V)) = -\bigtriangledown q'' + q''' - P\bigtriangledown V 
+	\end{aligned}
+\end{equation}
+
+
+\begin{equation}
+	\begin{aligned}
+		X = cb^{\frac{3}{4}}tanh(cb^{\frac{3}{4}}) 
+	\end{aligned}
+\end{equation}
+
+
+\end{document}
+
+
+
+
+
