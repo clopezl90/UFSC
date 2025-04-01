@@ -166,7 +166,7 @@ Do problema 2,22:
 \end{equation}
 \textbf{Desenvolvimiento}
 
-Primeiro, a equação de energia para a camada limite é estabelecida. Nesta equação, o termo associado aos efeitos da dufusividade em x é negligenciado.
+Primeiro, a equação de energia para a camada limite é estabelecida. Nesta equação, o termo associado aos efeitos da dufusividade em x é negligenciado [1, eq. (2.27) ].
 
 \begin{equation}
 	\begin{aligned}
@@ -213,7 +213,7 @@ A equação (11) é satisfeita. Esta expressão mostra como o número de Prandtl
 	\end{aligned}
 \end{equation}
 
-Aplicando a fórmula integral de Leibniz
+Aplicando a fórmula integral de Leibniz [1, eq 2.50`]
 
 \begin{equation}
 	\frac{d}{dx} \left[ \int_{-\infty}^{\infty} u T \, dy + T_\infty v_\infty - T_0 v_0 \right] = \alpha \left( \frac{\partial T}{\partial x} \bigg|_{y=\infty} - \frac{\partial T}{\partial x} \bigg|_{y=-\infty} \right)
@@ -305,7 +305,7 @@ Das expressões (14) e (15), U e D são substituídos
 \end{equation}
 \\
 
-
+Para ambos os casos, a distribuição de temperatura ao longo de x será proporcional à velocidade $U_{0}$ e ao diâmetro do jato $D_{0}$. No primeiro caso, quando dentro do fluxo laminar a camada limite térmica é maior que a hidrodinâmica, o efeito na temperatura a jusante do fluxo também será influenciado por Prandtl.
 \subsection*{Exercício solução de camada limite de Blasius}
 
 Uma técnica comumente usada para resolver o problema do fluxo na camada limite é através do método de \textbf{similaridade} de Blasius. \\
@@ -408,9 +408,25 @@ A solução obtida neste trabalho foi alcançada fazendo espaçamentos de domín
 	\caption{Perfil de velocidade na solução numérica da equação de Blasius}
 \end{figure}
 
- Esta solução mostra um resultado correto em relação ao resultado de referência esperado em relação aos encontrados no problema 2.2 e na figura 2.6 do texto livro.
+ Esta solução mostra um resultado correto em relação ao resultado de referência esperado em relação aos encontrados no problema 2.2 e na figura 2.6 do texto livro [1].
 
-
+\begin{thebibliography}{999}
+	
+	\bibitem{abejan}
+	Adrian Bejan,
+	Convection Heat Transfer.
+	Durham, North Carolina,
+	3rd Edition,
+	2004.
+	
+	\bibitem{naraghi}
+	Mohammad H. N. Naraghi,
+	Solution of similarity transform equations for Boundary layers.
+	Manhattan College,USA,
+	ASME Exposition,
+	2004.
+	
+\end{thebibliography}
 
 
 
