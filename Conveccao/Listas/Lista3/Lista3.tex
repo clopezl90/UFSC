@@ -73,7 +73,7 @@ A pressão em cada volume depende da altura (y). Para cada volume é
 	\end{aligned}
 \end{equation}
 
-Assumindo o fluxo através das aberturas como placas planas, completamente desenvolidas, a velocidade horizontal é calculada usando a equação de Hagen-Poiseuille. A distribuição de pressão é substituída pela equação ()3) y $dx = L$
+Assumindo o fluxo através das aberturas como placas planas, completamente desenvolidas, a velocidade horizontal é calculada usando a equação de Hagen-Poiseuille [1, eq 3.19]. A distribuição de pressão é substituída pela equação (3) y $dx = L$
 
 
 \begin{equation}
@@ -109,7 +109,7 @@ Substituindo U
 	\end{aligned}
 \end{equation}
 
-Esta expressão é equivalente à da equação (1)
+Esta expressão é equivalente à da equação (1)\\
 
 \textbf{(a) Calcular $\dot{m}$ e $q$}\\
 
@@ -127,10 +127,10 @@ Substituindo os valores numéricos em (2) e (10)
 	\end{aligned}
 \end{equation}
 
-A vazão mássica é proporcional à altura da abertura na proporção de $q \sim D^{3}$. Portanto, um aumento em $D$ incrementa proporcionalmente a taxa de transferência de calor. 
+A vazão mássica é proporcional à altura da abertura na proporção de $q \sim D^{3}$. Portanto, um aumento em $D$ incrementa diretamente a taxa de transferência de calor. 
 
 \subsection*{Exercício 3,27	 livro texto}
-\textbf{Relatar analiticamente as expressões}\\
+\textbf{Encontrar analiticamente as expressões}\\
 
 \begin{equation}
 	\begin{aligned}
@@ -152,7 +152,7 @@ A vazão mássica é proporcional à altura da abertura na proporção de $q \si
 
 \textbf{Desnvolvimento}\\
 
-A área de transferência de calor e, portanto, a área a ser otimizada será dada por $A = HL$. O calor extraído obedece à equação
+A área de transferência de calor e, portanto, a área a ser otimizada será dada por $A = HL = cte$. O calor extraído obedece à equação
 
 \begin{equation}
 	\begin{aligned}
@@ -160,7 +160,7 @@ A área de transferência de calor e, portanto, a área a ser otimizada será da
 	\end{aligned}
 \end{equation}
 
-O problema é analisado calculando a queda de temperatura do ponto mais quente até o ponto mais baixo $T_{0}$. Na relação $H/L$, o fluxo de calor será perpendicular a U quando $\frac{H}{L} < 1$, y quando $k_{0}$ tem valores baixos.
+O problema é analisado calculando a queda de temperatura do ponto mais quente $T_{peak}$ até o ponto mais frio $T_{0}$. Na relação $H/L$, o fluxo de calor será perpendicular a U quando $\frac{H}{L} < 1$, y quando $k_{0}$ tem valores baixos.
 \\
 Assim, a queda de temperatura entre o ponto mais quente $T_{peak}$ e a saída do duto com o ar aquecido $T_{0}$ será dada pela equação de condução deduzida por [2, eq. 4.1]
 
@@ -201,7 +201,7 @@ O valor ótimo desta expressão é calculado com a derivada igual a zero, consid
 \end{equation}
 
 \begin{equation}
-	\frac{d}{dH_{adim}}\Delta \widetilde{T} = \frac{2H_{adim}}{8} - \frac{1}{MH_{adim}^{2}}
+	\frac{d}{dH_{adim}}\Delta \widetilde{T} = \frac{2H_{adim}}{8} - \frac{1}{MH_{adim}^{2}} = 0
 \end{equation}
 \begin{equation}
 	 \sim \frac{H_{adim}^{3}}{4} - \frac{1}{M} \sim H_{opt} = \left( \frac{M}{4}\right) ^{\frac{1}{3}}
@@ -237,6 +237,12 @@ Portanto, o fluxo de massa $\dot{m}_{min}$ para garantir $\Delta \widetilde{T}_{
 
 \subsection*{Exercício demonstração}
 \textbf{Determinar o número de Nusselt para um escoamento interno, laminar, plenamente desenvolvido, com propriedades constantes, seção transversal circular e sujeito a um fluxo de calor uniforme na superfície.}\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.65\textwidth]{Figures/1_3}
+	\caption{Balanço de energia no volume diferencial dentro de um tubo com fluxo de calor uniforme nas paredes}
+\end{figure}
 
 Realizando um balanço de energia sem fluxo de calor por conducção como na Figura 3, a equação de energia para o volume diferencial é descrita por
 
@@ -313,11 +319,10 @@ A uma taxa de transferência de calor constante
 	2004.
 	
 	\bibitem{naraghi}
-	Mohammad H. N. Naraghi,
-	Solution of similarity transform equations for Boundary layers.
-	Manhattan College,USA,
-	ASME Exposition,
-	2004.
+	Adrian Bejan,
+	Shape and structure from engineering to nature.
+	Cambridge University, USA.
+	2000.
 	
 \end{thebibliography}
 
