@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.11)  2 APR 2025 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.11)  8 APR 2025 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Lista3.tex
-(./Lista3.tex
+**Lista4.tex
+(./Lista4.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -282,8 +282,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box58
 )
-(./Lista3.aux)
-\openout1 = `Lista3.aux'.
+(./Lista4.aux)
+\openout1 = `Lista4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -356,111 +356,55 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-Overfull \hbox (9.36568pt too wide) in paragraph at lines 33--34
-\OT1/cmr/bx/n/12 abertura e a transfer^encia de calor por convec^^Xc~ao s~ao da
-das pelas express~oes 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
 <Figures/1_1.png, id=1, 460.72125pt x 331.99031pt>
 File: Figures/1_1.png Graphic file (type png)
 <use Figures/1_1.png>
-Package pdftex.def Info: Figures/1_1.png  used on input line 49.
+Package pdftex.def Info: Figures/1_1.png  used on input line 37.
 (pdftex.def)             Requested size: 277.41176pt x 199.89986pt.
-
-Overfull \hbox (7.98053pt too wide) in paragraph at lines 76--77
-\OT1/cmr/m/n/12 desenvolidas, a velocidade horizontal ^^Se calculada usando a e
-qua^^Xc~ao de Hagen-Poiseuille
- []
-
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures/1_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
- []
-
-<Figures/1_2.png, id=15, 493.0922pt x 243.91125pt>
-File: Figures/1_2.png Graphic file (type png)
-<use Figures/1_2.png>
-Package pdftex.def Info: Figures/1_2.png  used on input line 149.
-(pdftex.def)             Requested size: 277.41176pt x 137.2295pt.
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-
- []
-
-
-Overfull \hbox (8.80144pt too wide) in paragraph at lines 197--198
-[]\OT1/cmr/m/n/12 O valor ^^Sotimo desta express~ao ^^Se calculado com a deriva
-da igual a zero, considerando
- []
-
-[3 <./Figures/1_2.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-
- []
-
-<Figures/1_3.jpeg, id=27, 334.24875pt x 339.2675pt>
-File: Figures/1_3.jpeg Graphic file (type jpg)
-<use Figures/1_3.jpeg>
-Package pdftex.def Info: Figures/1_3.jpeg  used on input line 243.
-(pdftex.def)             Requested size: 277.41176pt x 281.59712pt.
-[4] [5 <./Figures/1_3.jpeg>] [6] (./Lista3.aux)
+[2] (./Lista4.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5569 strings out of 476182
- 86038 string characters out of 5795595
- 1934975 words of memory out of 5000000
- 27510 multiletter control sequences out of 15000+600000
+ 5538 strings out of 476182
+ 85423 string characters out of 5795595
+ 1929975 words of memory out of 5000000
+ 27479 multiletter control sequences out of 15000+600000
  566694 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,9n,79p,285b,245s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,8n,79p,366b,242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb>
-Output written on Lista3.pdf (6 pages, 198905 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on Lista4.pdf (2 pages, 110643 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
