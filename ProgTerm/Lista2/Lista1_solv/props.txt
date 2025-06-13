@@ -1,0 +1,10 @@
+m_ponto=2.5
+q_area=20000
+rho=700
+k=0.078
+cp=2590
+miu_visc=0.15e-3
+d=0.070
+t_in = 673
+t_out = 723
+

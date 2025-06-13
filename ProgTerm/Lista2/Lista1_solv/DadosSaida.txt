@@ -1,0 +1,12 @@
+Fluxo [W/m2] // comprimento [m] // taxa de calor transferida [kW]
+2000 // 736.09 // 323.75
+20000 // 73.61 // 323.75
+50000 // 29.44 // 323.75
+Vacao [kg/s] // comprimento [m] // taxa de calor transferida [kW]
+0.5 // 14.72 // 64.75
+2.5 // 73.61 // 323.75
+10 // 294.44 // 1295.00
+Diametro [m] // comprimento [m] // taxa de calor transferida [W]
+0.01 // 515.26 // 40.47
+0.07 // 73.61 // 40.47
+0.2 // 25.76 // 40.47
