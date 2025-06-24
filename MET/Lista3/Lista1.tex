@@ -183,67 +183,166 @@ Para escoamento plenamente desenvolvido, a velocidade media na direçao i não m
 \end{equation}
 
 
-
-
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|c|c|c|}
-		\hline
-		Periodo T [s] & U media [m/s] & Desvio padrão [m/s]; \\ \hline
-		0 - 0,005   & 8,8854    & 1,0636    \\ \hline
-		0 - 0,05   & 8,5692   & 1,1724  \\ \hline
-		0 - 0,5    & 8,5342    & 1,2415    \\ \hline
-		0 - 5    & 8,5417    & 1,2330   \\ \hline
-	\end{tabular}
-	\caption{Valores de velocidade media e desvio padrão para diferentes intervalos}
-\end{table} 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.65\textwidth]{Figures/1.PNG}
-	\caption{Velocidade instantanea e velocidade media ate $t=0,05s$}
-\end{figure}
-
-O gráfico a seguir mostra a evolução da velocidade média e do desvio padrão. Ambas as grandezas convergem para um valor à medida que o tempo avança. Isso ocorre porque há mais dados para calcular a média da amostra em $t=5s$. As grandes e pequenas escalas terão passado pelo dispositivo de medição um número maior de vezes, o que permite estatísticas turbulentas mais homogêneas e, portanto, a medição do escoamento em regime permanente.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.65\textwidth]{Figures/2.PNG}
-	\caption{Velocidade media e desvio padrao nos intervalos de tempo analisados}
-\end{figure}
-
-
-\section*{Questão 2}
-
-A partir dos dados do arquivo Re125.txt:\\
-\textbf{i. Determine a energia cinética turbulenta, k, assumindo a condição de isotropia;}\\
-
-
-
-A energia cinética turbulenta é calculada com a expressão
-
+\section*{Questão 3}
+Demonstre (3.39) e mostre que (3.27) pode ser reescrita como 
 
 \begin{equation}
-	k = {\overline{u_i u_i}}/2
+	\overline{\varepsilon} = \nu \, \overline{ 
+		\frac{\partial u_i}{\partial x_j} \frac{\partial u_i}{\partial x_j} } 
+	+ \frac{\partial^2 \overline{u_i u_j}}{\partial x_i \partial x_j}
 \end{equation}
-Que para un escoamento isotrópico pode ser escrito como 
+
+
+\textbf{\underline{Desenvolvimento}}
+
+A equação 3.39 é
 
 \begin{equation}
-	k = {\overline{u1u1 + u1u1 + u1u1}}/2 \ = \ \frac{3}{2}\overline{u_1 u_1}^2 \ = \ 2,26 \ \frac{m^2}{s^2}
+	\frac{\overline{\partial u_i \partial u_j}}{\partial x_j \partial x_j} = \frac{\overline{\partial ^2 u_i u_j}}{\partial x_i \partial x_j}
 \end{equation}
 
-\textbf{ii. Faça um gráfico para o coeficiente de correlação temporal e avalie a escala de
-comprimento L das grandes escalas;}\\
+Abrindo o termo do lado dereito da equação 21
 
-Para o cálculo de correlação temporal , primeiro é necesario encomtrar o valor da correlação de velocidade no ponto $(r=0)$ dado pela expressão
+\begin{equation}
+	\frac{\partial ^2 u_i u_j}{\partial x_i \partial x_j} = \frac{\partial}{\partial x_i} \left( \frac{\partial u_i u_j}{\partial x_j}\right) = \frac{\partial}{\partial x_i} \left ( u_i  \frac{\partial u_j}{\partial x_j} + u_j  \frac{\partial u_i}{\partial x_j} \right)
+\end{equation}
+
+Aplicando a igualdade da equação 3.6 $\frac{\partial u_i}{\partial x_i} = 0$
+
+\begin{equation}
+	\frac{\partial}{\partial x_i} \left (u_j  \frac{\partial u_i}{\partial x_j} \right) = \frac{\partial u_j }{\partial x_i}  \frac{\partial u_i}{\partial x_j} + u_j   \left ( \frac{\partial}{\partial x_i} \frac{\partial u_i}{\partial x_j} \right)
+\end{equation}
+
+Pela propiedade comutativa das derivadas parciais
+
+\begin{equation}
+	\frac{\partial u_j }{\partial x_i}  \frac{\partial u_i}{\partial x_j} + u_j   \left ( \frac{\partial}{\partial x_j} \frac{\partial u_i}{\partial x_i} \right) = \frac{\partial u_j }{\partial x_i}  \frac{\partial u_i}{\partial x_j}
+\end{equation}
+
+Agora igualando e aplicando as medias
+
+\begin{equation}
+	\frac{\overline{\partial u_i \partial u_j}}{\partial x_j \partial x_j} = \frac{\overline{\partial ^2 u_i u_j}}{\partial x_i \partial x_j}
+\end{equation}
 
 
-\begin{equation*}
-	\mathbf{R}_{ij}^{(t)}(\mathbf{x}, \boldsymbol{\tau}) = \overline{u_i(\mathbf{x}, t) \, u_j(\mathbf{x}, t')}
-\end{equation*}
+Agora para a equação 2.27 
+\begin{equation}
+	\overline{\varepsilon} = \frac{1}{2} \nu \, \overline{
+		\left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)
+		\left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)
+	}
+\end{equation}
+Abrindo o producto dos termos
+
+\begin{equation}
+	\left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right)
+	\left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right) = \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j} + \frac{\partial u_i}{\partial x_j}\frac{\partial u_j}{\partial x_i} + \frac{\partial u_j}{\partial x_i}\frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i}\frac{\partial u_j}{\partial x_i}
+\end{equation}
+ Agrupando os termos
+ 
+\begin{equation}
+	 \left( \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j} +  \frac{\partial u_j}{\partial x_i}\frac{\partial u_j}{\partial x_i} \right) + \left(  \frac{\partial u_i}{\partial x_j}\frac{\partial u_j}{\partial x_i} + \frac{\partial u_j}{\partial x_i}\frac{\partial u_i}{\partial x_j} \right) = 
+	 \left( \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j} +  \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j} \right) + \left(  \frac{\partial u_i}{\partial x_j}\frac{\partial u_j}{\partial x_i} + \frac{\partial u_j}{\partial x_i}\frac{\partial u_i}{\partial x_j} \right)
+\end{equation}
+
+\begin{equation}
+	2\left( \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j}  \right) + 2\left(  \frac{\partial u_i}{\partial x_j}\frac{\partial u_j}{\partial x_i} \right) = 2\left( \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j}  \right) + 2\left(  \frac{\partial ^2 u_i u_j}{\partial x_j \partial x_i} \right)
+\end{equation}
+Agora sustituindo em eq. 26
+
+\begin{equation}
+	\overline{\varepsilon} = \frac{1}{2} \nu \, \overline{2\left( \frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j}  \right) + 2\left(  \frac{\partial ^2 u_i u_j}{\partial x_j \partial x_i} \right)} = \nu  \left[ \left( \overline{\frac{\partial u_i}{\partial x_j}\frac{\partial u_i}{\partial x_j}  }\right) + \left(  \frac{\partial ^2 \overline{u_i u_j}}{\partial x_j \partial x_i} \right)\right] 
+\end{equation}
+
+\section*{Questão 4}
 
 
+
+Usando correlações para camada limite turbulenta sobre uma superfície plana disponíveis em livros texto da graduação, determine os valores de $U\infty/u^*$, $Re_\delta$ e Re* em x = 1 e 2 m.\\
+
+\textbf{\underline{Desenvolvimento}}
+
+A expressão para o comprimento da camada limite turbulenta é definida como
+
+\begin{equation}
+	\delta = 0,382 x Re_x^{-1/5}
+\end{equation}
+
+
+Calculando os valores para $x=1m$
+
+\begin{equation}
+	Re_x = \frac{U_\infty x}{\nu} = \frac{25 \frac{m}{s} \cdot 1m}{1,5 x 10 ^{-5} m^2 / s} = 1,66 x 10 ^ {6}
+\end{equation}
+
+\begin{equation}
+	\delta_{1m}= 0,382 x Re_x^{-1/5} = 0,382 \cdot 1m \cdot(1,66 x 10 ^ {6})^{-1/5} = 0,021 m
+\end{equation}
+
+\begin{equation}
+	Re_\delta = \frac{U_\infty \delta}{\nu} = \frac{25 \frac{m}{s} \cdot 0,021m}{1,5 x 10 ^{-5} m^2 / s} = 3.5 x 10 ^ 4
+\end{equation}
+
+Calculando os valores para $x=2m$
+
+\begin{equation}
+	Re_x = \frac{U_\infty x}{\nu} = \frac{25 \frac{m}{s} \cdot 2m}{1,5 x 10 ^{-5} m^2 / s} = 3,33 x 10 ^ {6}
+\end{equation}
+
+\begin{equation}
+	\delta_{1m}= 0,382 x Re_x^{-1/5} = 0,382 \cdot 2m \cdot (3,33 x 10 ^ {6})^{-1/5} = 0,036 m
+\end{equation}
+
+\begin{equation}
+	Re_\delta = \frac{U_\infty \delta}{\nu} = \frac{25 \frac{m}{s} \cdot 0,036m}{1,5 x 10 ^{-5} m^2 / s} = 6 x 10 ^ 4
+\end{equation}
+
+Considerando o modelamiento da velocidade dado pela expressão de la lei logarítmica (eq 3.210 de [1])
+
+\begin{equation}
+	\frac{U_\infty}{u_*} + \frac{1}{\kappa} \ln\left( \frac{U_\infty}{u_*} \right)
+	= \frac{1}{\kappa} \ln Re_\delta + a - b
+\end{equation}
+
+Onde (de [1])
+
+\begin{equation}
+	Re_\delta = \dfrac{U_\infty}{u^*} Re_*
+\end{equation}
+
+Da eq. 38, encontra-se o valor de $u_*$ para $x=1m$, com os valores de $k\approx 0,41 ; a = 5,2 ; b = -2,5$
+
+\begin{equation}
+	\frac{25}{u_*} + \frac{1}{0,41} \ln\left( \frac{25}{u_*} \right)
+	= 44,3\  \rightarrow \ u_*= 0,70 m/s
+\end{equation}
+
+\begin{equation}
+	\frac{U_\infty}{u_*} = \frac{25 m/s}{0,70m/s} = 35,7
+\end{equation}
+
+
+E para $x = 2m$
+
+\begin{equation}
+	\frac{25}{u_*} + \frac{1}{0,41} \ln\left( \frac{25}{u_*} \right)
+	= 35,5 \  \rightarrow \ u_*= 0,95 m/s
+\end{equation}
+
+\begin{equation}
+	\frac{U_\infty}{u_*} = \frac{25 m/s}{0,95m/s} = 26,1
+\end{equation}
+
+\section*{Questão 5}
+
+Considere o escoamento turbulento plenamente desenvolvido de água em uma tubulação
+circular de parede lisa com raio R.\\
+a) Assumindo que a espessura da subcamada limite viscosa $\delta_v$ é equivalente a y+ = 5, mostre
+em um gráfico log-log, a razão $\delta_v/R$ para números de Reynolds $=( UD/\nu)$ iguais a $10^4$, $10^5$ e $10^6$. Use alguma correlação, como a de Blasius, para determinar a tensão na parede.\\
+b) Represente em um gráfico a distribuição de velocidade $U(r)/U$ para cada um dos números de
+Reynolds.\\
+c) Avalie o valor local da velocidade média em y+ = 5 e 50.
 
 
 
