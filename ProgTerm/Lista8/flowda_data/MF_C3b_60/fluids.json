@@ -1,0 +1,23 @@
+[
+  {
+    "id": "default-fluid",
+    "fluid_description": "Default fluid configuration",
+    "fluid": {
+      "oil": {
+        "name": "Light mineral oil",
+        "nominal_viscosity": 0.0029,
+        "nominal_density": 810
+      },
+      "gas": {
+        "name": "Sulfur hexafluoride (SF6)",
+        "nominal_viscosity": 0.000015,
+        "nominal_density": 6
+      },
+      "water": {
+        "name": "Tap water",
+        "nominal_viscosity": 0.001,
+        "nominal_density": 998
+      }
+    }
+  }
+]

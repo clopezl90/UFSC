@@ -342,9 +342,69 @@ a) Assumindo que a espessura da subcamada limite viscosa $\delta_v$ é equivalen
 em um gráfico log-log, a razão $\delta_v/R$ para números de Reynolds $=( UD/\nu)$ iguais a $10^4$, $10^5$ e $10^6$. Use alguma correlação, como a de Blasius, para determinar a tensão na parede.\\
 b) Represente em um gráfico a distribuição de velocidade $U(r)/U$ para cada um dos números de
 Reynolds.\\
-c) Avalie o valor local da velocidade média em y+ = 5 e 50.
+c) Avalie o valor local da velocidade média em y+ = 5 e 50.\\
 
+\textbf{\underline{Desenvolvimento}}
 
+a) O primer paso é emcontar uma expressão para $\delta_v$. Da definição da expesura da subcamada límite viscosa
+
+\begin{equation}
+	y^+ = 5 = \frac{u_*\delta_v}{\nu}
+\end{equation}
+\begin{equation}
+	\delta_v = \frac{5\nu}{u_*} \ \rightarrow \ \frac{\delta_v}{R} = \frac{5\nu}{Ru_*}
+\end{equation}
+
+Da expressão da velocidade de atrito e do coeficiente de atrito $f$
+
+\begin{equation}
+	u_*=\sqrt{\frac{\tau_w}{\rho}} \ ; \ f = \frac{\tau_w}{\frac{1}{2}\rho U^2} \ \rightarrow \ u_*=\sqrt{\frac{f}{2}}U
+\end{equation}
+Da definição do número de Reynolds
+
+\begin{equation}
+	Re_D = \frac{UD}{\nu} \ \rightarrow \ U= \frac{Re \nu}{D}
+\end{equation}
+
+Sustituindo em (46)
+
+\begin{equation}
+	u_*=\sqrt{\frac{f}{2}}U \ \rightarrow \  u_*=\sqrt{\frac{f}{2}} \frac{Re \nu}{D}
+\end{equation}
+
+Agora, reescrevendo na equação (45)
+
+\begin{equation}
+	\frac{\delta_v}{R} = \frac{5\nu}{Ru_*} = \frac{5\nu}{R\sqrt{\frac{f}{2}} \frac{Re \nu}{D}}
+\end{equation}
+
+Façendo manipulações algebraicas obtem-se que
+
+\begin{equation}
+	\frac{\delta_v}{R} = \frac{10 \cdot 2^{1/2}}{Re f^{1/2}}
+\end{equation}
+
+Pela correlação de Blasius que relaciona o coeficiente de atrito com o número de Reynolds
+
+\begin{equation}
+	f = 0,316 Re^{-1/4}
+\end{equation}
+
+Agora sustituindo em (51)
+
+\begin{equation}
+	\frac{\delta_v}{R} = \frac{10 \cdot 2^{1/2}}{Re (0,316 Re^{-1/4})^{1/2}} = \frac{10 \cdot 2^{1/2}}{Re^{7/8} \cdot 0,316^{1/2}}
+\end{equation}
+
+Obtem-se então uma razão para $\delta_v$ em função de $Re$
+
+\begin{equation}
+	\frac{\delta_v}{R} = 25,1 Re^{-7/8}
+\end{equation}
+
+O seguinte gráfico mostra como essa relação evolui com 3 números de Reynolds diferentes
+
+ 
 
 \begin{thebibliography}{999}
 	

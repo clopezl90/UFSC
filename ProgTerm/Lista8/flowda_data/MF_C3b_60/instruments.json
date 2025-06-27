@@ -1,0 +1,59 @@
+[
+  {
+    "id": "TIN"
+  },
+  {
+    "id": "USG"
+  },
+  {
+    "id": "USL"
+  },
+  {
+    "id": "INCL"
+  },
+  {
+    "id": "USO"
+  },
+  {
+    "id": "USW"
+  },
+  {
+    "id": "WC"
+  },
+  {
+    "id": "RHOG"
+  },
+  {
+    "id": "RHOO"
+  },
+  {
+    "id": "RHOW"
+  },
+  {
+    "id": "PIN"
+  },
+  {
+    "id": "PMID"
+  },
+  {
+    "id": "DPDX"
+  },
+  {
+    "id": "DPDX_FRIC"
+  },
+  {
+    "id": "HGAS"
+  },
+  {
+    "id": "HOIL"
+  },
+  {
+    "id": "HWAT"
+  },
+  {
+    "id": "HLIQ"
+  },
+  {
+    "id": "H"
+  }
+]
