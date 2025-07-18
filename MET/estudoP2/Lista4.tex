@@ -1,0 +1,240 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\geometry{margin=2.5cm}
+\title{Resúmenes – Capítulos 4 y 5\\Modelos de Turbulencia (EVM y RSM)}
+\author{Cristian Herledy López Lara}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\section*{Capítulo 4 – Modelos de Viscosidade Turbulenta (EVM)}
+	
+	\section*{1. Motivación}
+	Los modelos EVM (\textit{Eddy Viscosity Models}) usan la hipótesis de Boussinesq para representar las tensiones de Reynolds como proporcionales a los gradientes del flujo medio:
+	\[
+	\overline{u_i' u_j'} = -\nu_t \left( \frac{\partial \overline{U}_i}{\partial x_j} + \frac{\partial \overline{U}_j}{\partial x_i} \right) + \frac{2}{3}k\delta_{ij}
+	\]
+	
+	\section*{2. Tipos de Modelos EVM}
+	
+	\subsection*{Modelos Algebraicos (ej. Prandtl)}
+	\begin{itemize}
+		\item Simples y rápidos.
+		\item Requieren el campo medio.
+		\item Usados en escoamentos livres o camadas limites.
+		\item Limitados: no funcionan con separación ni recirculación.
+	\end{itemize}
+	
+	\subsection*{Modelo de 1 ecuación (k)}
+	\begin{itemize}
+		\item Resuelve transporte de $k$.
+		\item Requiere correlación para la longitud de mezcla $L$.
+		\item Mejor que algebraico, pero difícil de aplicar en geometrías complejas.
+	\end{itemize}
+	
+	\subsection*{Modelos de 2 ecuaciones}
+	\begin{itemize}
+		\item \textbf{k-$\varepsilon$}: bueno para escoamentos livres, falla en paredes.
+		\item \textbf{k-$\omega$}: bueno para región junto a la pared, sensible a condiciones de frontera.
+		\item \textbf{SST}: híbrido k-$\varepsilon$ / k-$\omega$, robusto en separación y presión adversa.
+	\end{itemize}
+	
+	\section*{3. Aplicación y Comparación}
+	
+	\begin{center}
+		\begin{tabular}{|l|c|c|c|l|}
+			\hline
+			Modelo & Variables & Fortalezas & Limitaciones & Aplicación \\
+			\hline
+			Algebraico & - & Muy simple & No sirve con separación & Camadas limite \\
+			1 ecuación & $k$ & Intermedio & Requiere $L$ empírico & Flujos internos \\
+			k-$\varepsilon$ & $k$, $\varepsilon$ & Robusto & Malo en paredes & Jets, estelas \\
+			k-$\omega$ & $k$, $\omega$ & Pared precisa & Frágil en frontera & Tubos, ductos \\
+			SST & $k$, $\omega$ & Preciso y robusto & Más caro & Flujos complejos \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\section*{4. Deficiencias Generales}
+	\begin{itemize}
+		\item No capturan anisotropía.
+		\item Fallan con memoria, curvatura, separación y presión adversa.
+		\item Relación lineal entre tensiones y gradientes es limitada.
+	\end{itemize}
+	
+	\newpage
+	
+	\section*{Capítulo 5 – Modelos de Transporte para Tensões de Reynolds (RSM)}
+	
+	\section*{1. Motivación}
+	Modelos RSM resuelven directamente las ecuaciones de transporte de $\overline{u_i' u_j'}$, permitiendo capturar:
+	\begin{itemize}
+		\item Curvatura de líneas de corriente.
+		\item Esfuerzos normales relevantes.
+		\item Efectos de rotación, Coriolis, empuje térmico.
+	\end{itemize}
+	
+	\section*{2. Estructura General}
+	\[
+	\frac{D \overline{u_i' u_j'}}{Dt} =
+	P_{ij} + F_{ij} + d_{ij} + \varphi_{ij} - \varepsilon_{ij}
+	\]
+	
+	\section*{3. Componentes del Modelo}
+	
+	\subsection*{Producción $P_{ij}$}
+	Transferencia de energía desde el flujo medio. Es exacta.
+	
+	\subsection*{Fuente $F_{ij}$}
+	Incorpora fuerzas externas: empuje, Coriolis, etc. No modelables con EVM.
+	
+	\subsection*{Difusión $d_{ij}$}
+	Modelada con Daly \& Harlow (1970):
+	\[
+	d_{ij} = - c_s \frac{u_k u_m}{\varepsilon} \frac{\partial \overline{u_i' u_j'}}{\partial x_m}
+	\]
+	
+	\subsection*{Redistribución $\varphi_{ij}$}
+	Modela transferencia entre componentes (isotropía). Incluye modelos:
+	\begin{itemize}
+		\item Rotta (1951)
+		\item Naot et al. (1970)
+		\item Gibson \& Launder (1978)
+		\item Craft \& Launder (1992)
+	\end{itemize}
+	
+	\subsection*{Disipación $\varepsilon_{ij}$}
+	Generalmente se asume isotrópica:
+	\[
+	\varepsilon_{ij} = \frac{2}{3} \varepsilon \delta_{ij}
+	\]
+	
+	\section*{4. Ecuaciones auxiliares}
+	
+	\subsection*{Energía cinética turbulenta}
+	\[
+	k = \frac{1}{2} (\overline{u_1'^2} + \overline{u_2'^2} + \overline{u_3'^2})
+	\]
+	
+	\subsection*{Ecuación para $\varepsilon$}
+	\[
+	\frac{\partial \varepsilon}{\partial t} + U_j \frac{\partial \varepsilon}{\partial x_j} =
+	c_{\varepsilon1} \frac{\varepsilon}{k} P_k - c_{\varepsilon2} \frac{\varepsilon^2}{k} + \text{difusión}
+	\]
+	
+	\section*{5. Condiciones de Contorno}
+	\begin{itemize}
+		\item Se utilizan funciones-parede o interfaz EVM-RSM.
+		\item En la pared: $uv = -\tau_w/\rho$, $k$ y $\varepsilon$ por perfil log.
+		\item Tensiones normales: $\partial (uu/k) / \partial n = 0$ en la interfaz.
+	\end{itemize}
+	
+	\section*{6. Comparación RSM vs EVM}
+	
+	\begin{tabular}{|l|p{6.5cm}|p{6.5cm}|}
+		\hline
+		Aspecto & RSM & EVM (e.g. k-$\varepsilon$) \\
+		\hline
+		Anisotropía & Capturada naturalmente & No representada \\
+		Curvatura y separación & Bien predicho & Mal predicho \\
+		Complejidad & Alta & Moderada \\
+		Número de ecuaciones & 6 + $k$ + $\varepsilon$ & 2 \\
+		Aplicación típica & Flujos complejos, rotación, empuje & Flujos internos/externos simples \\
+		\hline
+	\end{tabular}
+	
+\section*{Questão 1 – Deficiências da Relação de Kolmogorov}
+
+\begin{itemize}
+	\item \textbf{1. Suposição de isotropia:} a relação assume que as tensões turbulentas são proporcionais aos gradientes de velocidade média, o que implica isotropia – uma suposição que falha em regiões como paredes ou zonas de separação.
+	\item \textbf{2. Incapacidade de prever curvatura ou efeitos externos:} o modelo ignora gradientes como \( \partial V/\partial x \), importantes em superfícies curvas ou escoamentos com rotação/empuxo, resultando em subestimação de tensões como \( \overline{u'v'} \).
+\end{itemize}
+
+\section*{Questão 2 – Característica Particular de Modelos Específicos}
+
+\begin{itemize}
+	\item \textbf{SST:} combina k-$\omega$ próximo da parede com k-$\varepsilon$ longe da parede, permitindo melhor previsão de separação e gradientes adversos de pressão.
+	\item \textbf{RNG k-$\varepsilon$:} deriva suas constantes a partir de teoria de grupos de renormalização, melhorando previsões com curvatura e rotação.
+	\item \textbf{k-$\varepsilon$ realizável:} permite que \( C_\mu \) varie com o campo de escoamento, garantindo tensões físicas (ex. tensões normais sempre positivas).
+\end{itemize}
+
+\textbf{Comparação:} O modelo k-$\varepsilon$ clássico assume constantes fixas, é robusto para escoamentos livres, mas falha em regiões próximas à parede.
+
+\section*{Questão 3 – Por que usar o perfil logarítmico sem resolver a subcamada viscosa}
+
+Na região logarítmica (30 < \( y^+ \) < 400), o transporte de momento é dominado pelas tensões turbulentas.  
+Negligenciando o termo viscoso na equação de balanço de momentum:
+
+\[
+\frac{dU}{dy} = \frac{u_\tau^2}{\nu_t}, \quad \text{com } \nu_t = \kappa y u_\tau
+\Rightarrow \frac{dU}{dy} = \frac{u_\tau}{\kappa y}
+\]
+
+Integrando:
+
+\[
+U(y) = \frac{u_\tau}{\kappa} \ln\left( \frac{y}{y_0} \right) \Rightarrow
+\frac{U}{u_\tau} = \frac{1}{\kappa} \ln(y^+) + B
+\]
+
+\textbf{Conclusão:} Quando não se resolve a subcamada viscosa, usa-se o perfil logarítmico como condição de contorno porque ele é solução assintótica válida na região onde o fluxo é puramente turbulento.
+
+\section*{Questão 4 – Aumento de \( uv \) com curvatura do escoamento}
+
+O termo de produção \( P_{ij} \) inclui:
+
+\[
+P_{12} = -\overline{u'^2} \frac{\partial V}{\partial x} - \overline{v'u'} \frac{\partial U}{\partial y}
+\]
+
+Em superfícies curvas (ex. côncavas), \( \partial V/\partial x > 0 \), e como \( \overline{u'^2} > 0 \), o termo aumenta \( P_{12} \), resultando em maior \( \overline{u'v'} \).  
+Modelos EVM ignoram esse termo, subestimando \( uv \).
+
+\textbf{Conclusão:} A curvatura intensifica \( uv \) devido ao termo extra na produção, o que exige uso de modelos RSM para capturar corretamente o efeito.
+
+\section*{Questão 5 – Perfil Logarítmico de Temperatura e Baixos Reynolds}
+
+\subsection*{a) Por que não usar o perfil logarítmico de temperatura como condição de contorno}
+
+- O perfil assume domínio do transporte turbulento.
+- Em baixos \( Re \), ou com \( Pr \ne 1 \), o transporte é ainda molecular.
+- A subcamada térmica é espessa ou fina dependendo do fluido.
+
+\textbf{Prandtl ajustou isso}, propondo uma função de mistura térmica separada, rompendo a analogia simples com a velocidade.
+
+\subsection*{b) Física não modelada em baixos Reynolds com transferência de calor}
+
+- O fluxo de calor ainda é controlado por condução, não por turbulência.
+- A analogia de Prandtl falha porque \( \nu \ne \alpha \) (número de Prandtl \( \ne 1 \)).
+- Camadas térmica e de momento se desenvolvem em escalas distintas.
+
+\textbf{Conclusão:} Modelos baseados na analogia de Prandtl não representam corretamente os mecanismos dominantes em baixos Re.
+
+\section*{Questão 6 – LES vs RANS e Sub-malha dinâmica}
+
+\subsection*{a) Por que o LES é conceitualmente mais simples que RANS}
+
+- LES resolve diretamente as grandes escalas (dependentes da geometria).
+- Modela apenas as pequenas escalas com um modelo sub-malha (SGS).
+- RANS modela todas as escalas, inclusive estruturas grandes, com modelos empíricos mais complexos.
+
+\textbf{Conclusão:} LES separa claramente o que é resolvido e o que é modelado, o que o torna conceitualmente mais direto.
+
+\subsection*{b) Como funciona a modelação sub-malha dinâmica}
+
+\begin{enumerate}
+	\item Aplica-se dois filtros: um no nível da malha e outro maior (filtro de teste).
+	\item Usa-se a identidade de Germano para obter um erro entre tensores de Reynolds em diferentes escalas.
+	\item Calcula-se localmente o coeficiente do modelo SGS (ex. \( C_s \)) com base nesse erro.
+	\item O modelo adapta-se ao escoamento: mais preciso e menos dependente de calibração empírica.
+\end{enumerate}
+
+\textbf{Conclusão:} A modelação sub-malha dinâmica ajusta os coeficientes de forma adaptativa usando dois níveis de filtro e a estrutura do escoamento local.
+
+	
+\end{document}
